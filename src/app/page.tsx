@@ -7,6 +7,7 @@ import { BentoKpis } from "@/components/BentoKpis";
 import { WorkflowCanvas } from "@/components/WorkflowCanvas";
 import { DriftScenarioSimulator } from "@/components/DriftScenarioSimulator";
 import { LiveCodeAuditor } from "@/components/LiveCodeAuditor";
+import { AgenticWorkflowsView } from "@/components/AgenticWorkflowsView";
 import { ArchitecturalTenetsMatrix } from "@/components/ArchitecturalTenetsMatrix";
 import { DiagnosticRoadmapView } from "@/components/DiagnosticRoadmapView";
 import { ActivityConsole } from "@/components/ActivityConsole";
@@ -22,7 +23,8 @@ import {
   Terminal,
   FolderGit2,
   Calculator,
-  Flame
+  Flame,
+  Workflow
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -48,6 +50,7 @@ export default function HomePage() {
   const handleCommandSelect = (actionId: string) => {
     if (actionId === "tab-scenarios") setActiveTab("simulator");
     else if (actionId === "tab-auditor") setActiveTab("auditor");
+    else if (actionId === "tab-workflows") setActiveTab("workflows");
     else if (actionId === "tab-tenets") setActiveTab("tenets");
     else if (actionId === "tab-roadmap") setActiveTab("roadmap");
     else if (actionId === "modal-blueprints") setBlueprintsOpen(true);
@@ -67,11 +70,12 @@ export default function HomePage() {
         onOpenCommand={() => setCommandOpen(true)}
       />
 
-      {/* Main Responsive Container (Max-W-7xl, Anti-Wrap, Pixel-Aligned) */}
-      <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6 space-y-6">
+      {/* Main Responsive Container (Max-W-[1440px], Anti-Wrap, Pixel-Aligned) */}
+      <main className="flex-1 max-w-[1440px] w-full mx-auto px-4 sm:px-6 lg:px-8 py-6 space-y-6">
         {/* Pinned 30-Second Guided Tour */}
         <ReviewerTour
-          activeTab={activeTab} onSelectTab={setActiveTab}
+          activeTab={activeTab} 
+          onSelectTab={setActiveTab}
           onOpenBlueprints={() => setBlueprintsOpen(true)}
         />
 
@@ -106,6 +110,18 @@ export default function HomePage() {
             >
               <Sparkles className="h-3.5 w-3.5" />
               Live AI Auditor
+            </button>
+
+            <button
+              onClick={() => setActiveTab("workflows")}
+              className={`flex items-center gap-1.5 px-3.5 py-2 text-xs font-semibold rounded-lg whitespace-nowrap shrink-0 transition-all ${
+                activeTab === "workflows"
+                  ? "bg-indigo-600 text-white shadow-sm"
+                  : "text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white"
+              }`}
+            >
+              <Workflow className="h-3.5 w-3.5" />
+              Workflows & APIs
             </button>
 
             <button
@@ -169,6 +185,7 @@ export default function HomePage() {
         <section className="transition-opacity duration-200">
           {activeTab === "simulator" && <DriftScenarioSimulator />}
           {activeTab === "auditor" && <LiveCodeAuditor />}
+          {activeTab === "workflows" && <AgenticWorkflowsView />}
           {activeTab === "tenets" && <ArchitecturalTenetsMatrix />}
           {activeTab === "roadmap" && <DiagnosticRoadmapView />}
         </section>

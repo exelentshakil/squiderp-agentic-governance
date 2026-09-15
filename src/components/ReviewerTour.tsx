@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { CheckCircle2, ArrowRight, ShieldCheck, Zap, Cpu, Download } from "lucide-react";
+import { CheckCircle2, ArrowRight, ShieldCheck, Zap, Cpu, Download, Workflow } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 
 interface ReviewerTourProps {
@@ -41,42 +41,42 @@ export function ReviewerTour({
     },
     {
       num: 2,
+      tag: "Workflows & APIs",
+      title: "Durable DAGs & REST Sync",
+      desc: "Inspect Inngest event state machines, ERP REST/Webhook test consoles, and 3-agent adversarial consensus scoring.",
+      action: () => {
+        onSelectTab("workflows");
+        if (!completedSteps.includes(2)) toggleStep(2);
+      },
+      btnText: "Test Workflows",
+      icon: Workflow,
+      isActive: activeTab === "workflows",
+    },
+    {
+      num: 3,
       tag: "Dual-AI Engine",
       title: "Live Multi-Agent Auditor",
       desc: "Paste real C# or SQL code and watch 3 specialized subagents conduct an adversarial audit with live latency telemetry.",
       action: () => {
         onSelectTab("auditor");
-        if (!completedSteps.includes(2)) toggleStep(2);
+        if (!completedSteps.includes(3)) toggleStep(3);
       },
       btnText: "Audit Code",
       icon: Zap,
       isActive: activeTab === "auditor",
     },
     {
-      num: 3,
+      num: 4,
       tag: "10 RFP Answers",
       title: "Operating Tenets Matrix",
       desc: "Review comprehensive architectural blueprints answering all 10 brief requirements for scaling AI across SquidERP.",
       action: () => {
         onSelectTab("tenets");
-        if (!completedSteps.includes(3)) toggleStep(3);
+        if (!completedSteps.includes(4)) toggleStep(4);
       },
       btnText: "Inspect Tenets",
       icon: Cpu,
       isActive: activeTab === "tenets",
-    },
-    {
-      num: 4,
-      tag: "Turnkey Code",
-      title: "Export Architecture Assets",
-      desc: "Download production-ready .claude/rules, custom Roslyn C# analyzers, TeamCity CI pipelines, and SQL drift guardrails.",
-      action: () => {
-        onOpenBlueprints();
-        if (!completedSteps.includes(4)) toggleStep(4);
-      },
-      btnText: "Export Files",
-      icon: Download,
-      isActive: false,
     },
   ];
 
@@ -84,7 +84,7 @@ export function ReviewerTour({
 
   return (
     <section className="w-full py-4 border-b border-slate-200 bg-gradient-to-b from-indigo-50/50 via-white to-white dark:from-indigo-950/20 dark:via-slate-900 dark:to-slate-900 dark:border-slate-800">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-8">
         {/* Top Header & Progress */}
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-3">
           <div className="flex items-center gap-2">

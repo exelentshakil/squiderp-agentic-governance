@@ -10,10 +10,9 @@ import {
   FolderGit2, 
   Calculator, 
   Flame, 
-  Moon, 
-  Sun,
-  Layers,
-  ArrowRight
+  Layers, 
+  ArrowRight,
+  Workflow
 } from "lucide-react";
 import { 
   Dialog, 
@@ -45,6 +44,14 @@ export function CommandDialog({ open, onOpenChange, onSelectAction }: CommandDia
       icon: Sparkles,
       shortcut: "2",
       desc: "Paste C#, SQL, or TypeScript for instant 3-agent architectural audit.",
+    },
+    {
+      id: "tab-workflows",
+      title: "Agentic Workflows & ERP APIs",
+      category: "Interactive Simulators",
+      icon: Workflow,
+      shortcut: "W",
+      desc: "Durable Inngest DAG state machine, ERP REST/Webhook APIs, and multi-agent consensus.",
     },
     {
       id: "tab-tenets",

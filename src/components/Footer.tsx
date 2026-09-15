@@ -17,7 +17,7 @@ import { Badge } from "@/components/ui/badge";
 export function Footer() {
   return (
     <footer className="w-full border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950/80 transition-colors">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-8">
+      <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-8">
         {/* Top Grid */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
           {/* Brand & Mission */}
