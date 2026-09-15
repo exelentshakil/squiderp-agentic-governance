@@ -92,7 +92,7 @@ export function ReviewerTour({
               30s
             </span>
             <h2 className="text-sm font-bold text-slate-900 dark:text-white uppercase tracking-wider">
-              Mendel's Diagnostic Tour & Architectural Evaluation
+              Executive Diagnostic Tour & Architectural Evaluation
             </h2>
             <Badge variant="brand" className="text-xs font-mono">
               Verified Control Plane

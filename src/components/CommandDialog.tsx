@@ -52,15 +52,15 @@ export function CommandDialog({ open, onOpenChange, onSelectAction }: CommandDia
       category: "Governance Framework",
       icon: Layers,
       shortcut: "3",
-      desc: "Mendel's 10 RFP technical questions answered with operating models.",
+      desc: "10 Enterprise architectural tenets answered with operating models.",
     },
     {
       id: "tab-roadmap",
-      title: "Phase 0-4 Diagnostic Roadmap",
+      title: "Enterprise Implementation Roadmap",
       category: "Governance Framework",
       icon: FileText,
       shortcut: "4",
-      desc: "Consulting-to-hire engagement plan for SquidERP codebase audit.",
+      desc: "4-phase engineering rollout from diagnostic audit to enterprise scale.",
     },
     {
       id: "modal-blueprints",

@@ -45,7 +45,7 @@ export function ArchitecturalTenetsMatrix() {
                 10 Architectural Tenets for Enterprise AI-Native Development
               </h3>
               <Badge variant="brand" className="text-xs font-mono">
-                Mendel's 10 Brief Points
+                10 Architecture Tenets
               </Badge>
             </div>
             <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">

@@ -252,7 +252,7 @@ export const ARCHITECTURAL_TENETS: ArchitecturalTenet[] = [
     operationalModel: "Humans are strategically placed at high-blast-radius decision points, NOT micro-reading syntax. Mandatory Human Sign-Off triggers: 1. Any change modifying financial ledger or balance computation logic. 2. Any database migration changing table schemas or indexes. 3. Public API contract changes impacting desktop or mobile synchronization. 4. Release to staging and production.",
     deterministicVsAi: "Deterministic: Automation automatically tags PRs with risk labels ('Risk: High - Ledger Mutation'). Humans: One-click approval after reviewing pre-summarized diffs and agent verdicts.",
     concreteArtifacts: ["CODEOWNERS", "github-environment-rules.json", "audit-signoff-log.sql"],
-    squidErpApplication: "Ensures Mendel and senior SquidERP architects maintain absolute sovereign control over the financial ledger and database schema.",
+    squidErpApplication: "Ensures Principal and Staff enterprise architects maintain absolute sovereign control over the financial ledger and database schema.",
   },
   {
     id: 7,
@@ -302,35 +302,22 @@ export interface OperatingPhase {
   duration: string;
   focus: string;
   deliverables: string[];
-  clientCommitment: string;
+  track: string;
 }
 
 export const DIAGNOSTIC_ROADMAP: OperatingPhase[] = [
   {
-    phase: "Phase 0",
-    name: "Live Architectural Control Plane & Drift Firewall Prototype",
-    duration: "Shipped Live (Today)",
-    focus: "Working prototype demonstrating multi-agent review, Roslyn rule gates, and drift detection.",
-    deliverables: [
-      "Live interactive governance cockpit deployed on Vercel",
-      "Real dual-provider AI code & architecture auditor (/api/ai/audit)",
-      "Interactive 4-scenario architectural drift simulation engine",
-      "Exportable production blueprints (Roslyn, TeamCity, Claude rules)",
-    ],
-    clientCommitment: "$0.00 (Demonstrated proof of technical capability upfront)",
-  },
-  {
     phase: "Phase 1",
     name: "Engineering & AI-Development Diagnostic Audit",
     duration: "Weeks 1–2",
-    focus: "In-depth diagnostic assessment of SquidERP's mature production codebase, .NET/SQL architecture, and current AI workflows.",
+    focus: "In-depth diagnostic assessment of SquidERP mature production codebase, .NET/SQL architecture, and current AI workflows.",
     deliverables: [
-      "Comprehensive Diagnostic Report on SquidERP's current engineering lifecycle",
+      "Comprehensive Diagnostic Report on current engineering lifecycle and toolchains",
       "Inventory of architectural drift vulnerabilities and legacy bottleneck hotspots",
       "Evaluation of developer workflows across Claude Code, Codex, and Cursor",
-      "Target Architecture Blueprint: Scalable AI-native operating model for SquidERP",
+      "Target Architecture Blueprint: Scalable AI-native operating model and governance gates",
     ],
-    clientCommitment: "Diagnostic Milestone (~25-30 hrs/wk)",
+    track: "Architecture Audit & Baseline",
   },
   {
     phase: "Phase 2",
@@ -338,12 +325,12 @@ export const DIAGNOSTIC_ROADMAP: OperatingPhase[] = [
     duration: "Weeks 3–5",
     focus: "Implementing repository-level AI instructions, modular skills, and bounded context packs across .NET, SQL, and Angular repos.",
     deliverables: [
-      "Repository-level .claude/rules and context governance across key ERP repos",
+      "Repository-level .claude/rules and context governance across key ERP repositories",
       "Domain-specific Context Packs for Accounting, Inventory, Sync, and Reporting",
       "Custom MCP servers indexing SquidERP schema, APIs, and data dictionary",
       "Standardized requirements templates for analysts and developers",
     ],
-    clientCommitment: "Diagnostic Milestone (~25-30 hrs/wk)",
+    track: "Rules & Context Engine",
   },
   {
     phase: "Phase 3",
@@ -356,19 +343,19 @@ export const DIAGNOSTIC_ROADMAP: OperatingPhase[] = [
       "Automated multi-agent PR review workflow integrated with TeamCity",
       "Human-in-the-loop escalation dashboard for high-risk changes",
     ],
-    clientCommitment: "Diagnostic Milestone (~25-30 hrs/wk)",
+    track: "CI/CD & Roslyn Gates",
   },
   {
     phase: "Phase 4",
-    name: "Legacy Modernization Playbook & Developer Enablement",
+    name: "Legacy Modernization Playbook & Enterprise Enablement",
     duration: "Weeks 10–14+",
     focus: "Scaling the operating model across all development teams and modernizing legacy .NET / SQL Server components.",
     deliverables: [
       "Strangler Fig modernization workflows for legacy stored procedures and WPF sync",
       "Golden Master automated characterization test harnesses",
       "Developer enablement workshops and onboarding playbooks for SquidERP engineers",
-      "Ongoing advisory and architectural stewardship",
+      "Ongoing advisory, architectural reviews, and continuous governance stewardship",
     ],
-    clientCommitment: "Ongoing Architectural Stewardship",
+    track: "Enterprise Scale & Stewardship",
   },
 ];
