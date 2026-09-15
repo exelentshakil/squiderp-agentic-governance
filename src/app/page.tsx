@@ -140,18 +140,6 @@ export default function HomePage() {
             </button>
 
             <button
-              onClick={() => handleSelectTab("tenets", false)}
-              className={`flex items-center gap-1.5 px-3.5 py-2 text-xs font-semibold rounded-lg whitespace-nowrap shrink-0 transition-all ${
-                activeTab === "tenets"
-                  ? "bg-indigo-600 text-white shadow-sm"
-                  : "text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white"
-              }`}
-            >
-              <Layers className="h-3.5 w-3.5" />
-              10 Tenets
-            </button>
-
-            <button
               onClick={() => handleSelectTab("roadmap", false)}
               className={`flex items-center gap-1.5 px-3.5 py-2 text-xs font-semibold rounded-lg whitespace-nowrap shrink-0 transition-all ${
                 activeTab === "roadmap"
@@ -161,6 +149,18 @@ export default function HomePage() {
             >
               <Terminal className="h-3.5 w-3.5" />
               Operating Model
+            </button>
+
+            <button
+              onClick={() => handleSelectTab("tenets", false)}
+              className={`flex items-center gap-1.5 px-3.5 py-2 text-xs font-semibold rounded-lg whitespace-nowrap shrink-0 transition-all ${
+                activeTab === "tenets"
+                  ? "bg-indigo-600 text-white shadow-sm"
+                  : "text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white"
+              }`}
+            >
+              <Layers className="h-3.5 w-3.5" />
+              10 Tenets
             </button>
           </div>
 
