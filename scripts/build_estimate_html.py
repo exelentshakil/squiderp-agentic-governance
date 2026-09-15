@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """
 Production Scope & Formal Estimate Generator
-Web App for Retirement Scorecard — Client: Jim Martin (Christiansburg, VA, USA)
+SquidERP Principal AI-Native Software Engineering & Governance Architect
+Client: Mendel, SquidERP (Brooklyn, NY, USA)
 Built to exact BarakahSoft Gold-Standard Architecture:
 - 6 Direct Flex Children (Zero Middle Void)
 - High-Density 6-Row Scope Table with Percentage Allocations
@@ -36,7 +37,7 @@ def build_estimate():
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Production Scope & Formal Estimate - Web App for Retirement Scorecard</title>
+  <title>Production Scope &amp; Formal Estimate - SquidERP AI-Native Governance</title>
   <style>
     @page {{
       size: letter portrait;
@@ -88,12 +89,12 @@ def build_estimate():
       font-weight: 800;
       letter-spacing: 0.05em;
       text-transform: uppercase;
-      color: #0284c7;
+      color: #4f46e5;
       margin-bottom: 2px;
       white-space: nowrap;
     }}
     h1 {{
-      font-size: 14px;
+      font-size: 13.8px;
       font-weight: 800;
       color: #0f2942;
       margin: 0 0 2px 0;
@@ -151,7 +152,7 @@ def build_estimate():
       text-transform: uppercase;
       letter-spacing: 0.05em;
       color: #0f2942;
-      border-left: 3px solid #0284c7;
+      border-left: 3px solid #4f46e5;
       padding-left: 6px;
       margin: 0;
     }}
@@ -302,7 +303,7 @@ def build_estimate():
     }}
     .term-title {{
       font-weight: 800;
-      color: #0284c7;
+      color: #4f46e5;
       text-transform: uppercase;
       font-size: 7.7px;
       margin-bottom: 1px;
@@ -460,9 +461,9 @@ def build_estimate():
     }}
     .demo-badge {{
       font-size: 7.6px;
-      color: #0369a1;
-      background: #e0f2fe;
-      border: 1px solid #bae6fd;
+      color: #4338ca;
+      background: #e0e7ff;
+      border: 1px solid #c7d2fe;
       padding: 1.5px 6px;
       border-radius: 3px;
       font-weight: 700;
@@ -478,32 +479,32 @@ def build_estimate():
   <!-- 1. Executive Header -->
   <div class="header">
     <div class="header-left">
-      <div class="brand-title">BarakahSoft LLC • Systems Architecture • Ref #BS-2026-RET-SCORE</div>
-      <h1>Web App for Retirement Scorecard — Advisory Diagnostics Engine</h1>
-      <p class="subtitle">Clean Prospect Intake • Decoupled 5-Pillar Scoring • 8.5×11 Letter Print Lock • Zero-PII In-Memory Storage</p>
+      <div class="brand-title">BarakahSoft LLC • Enterprise Architecture • Ref #BS-2026-SQUID-ERP</div>
+      <h1>SquidERP Principal AI-Native Software Engineering &amp; Governance Architect</h1>
+      <p class="subtitle">Deterministic Roslyn Drift Firewalls • SQL Multi-Tenant Isolation • 3-Tier Multi-Agent Review • Legacy Modernization</p>
     </div>
     <div class="meta-card">
-      <div><strong>Client:</strong> Jim Martin (Christiansburg, VA, USA)</div>
-      <div><strong>Timeline:</strong> 3–4 Business Days (Turnkey Delivery)</div>
-      <div><strong>Turnkey Package:</strong> <strong>$300.00 Fixed USD</strong></div>
-      <div><strong>Live Prototype:</strong> <span class="live-badge">Verified &amp; Operational</span></div>
+      <div><strong>Client:</strong> Mendel, SquidERP (Brooklyn, NY, USA)</div>
+      <div><strong>Engagement:</strong> Principal Systems Architect (~25–30 hrs/wk)</div>
+      <div><strong>Calibrated Rate:</strong> <strong>$47.00/hr USD (Top of Posted Range)</strong></div>
+      <div><strong>Live Cockpit:</strong> <span class="live-badge">Verified &amp; Operational</span></div>
     </div>
   </div>
 
   <!-- 2. Scope Table -->
   <div class="scope-block">
     <div class="section-header">
-      <h2 class="section-title">Production Scope &amp; Milestone Delivery Schedule</h2>
-      <div class="section-meta">Live Cockpit: https://retirement-scorecard-app.vercel.app</div>
+      <h2 class="section-title">Production Scope &amp; Operating Milestone Delivery Schedule</h2>
+      <div class="section-meta">Live Cockpit: https://squiderp-agentic-governance.vercel.app</div>
     </div>
 
     <table>
       <thead>
         <tr>
-          <th style="width: 12%;">Milestone</th>
-          <th style="width: 58%;">Architecture &amp; Production Engineering Deliverables</th>
+          <th style="width: 11%;">Milestone</th>
+          <th style="width: 59%;">Enterprise Architectural Deliverables &amp; Engineering Guardrails</th>
           <th style="width: 10%; text-align: center;">Timeline</th>
-          <th style="width: 8%; text-align: center;">Share</th>
+          <th style="width: 8%; text-align: center;">Hours</th>
           <th style="width: 12%; text-align: right;">Investment</th>
         </tr>
       </thead>
@@ -511,68 +512,58 @@ def build_estimate():
         <tr class="phase-0-row">
           <td class="phase-num"><span class="phase-0-badge">Phase 0</span></td>
           <td>
-            <div class="phase-name">Interactive Architecture Prototype &amp; Operational Cockpit (Live)</div>
-            <div class="phase-desc">Working 5-pillar advisory questionnaire, live mathematical scoring calculation, R/Y/G status indicators, dual-provider OpenAI/Gemini AI narrative engine, and live 8.5x11 portrait preview. Built upfront to de-risk delivery.</div>
+            <div class="phase-name">Interactive Governance Control Plane &amp; Prototype (Deployed &amp; Live)</div>
+            <div class="phase-desc">Complete live cockpit: 4-scenario architectural drift simulator, real dual-provider AI code auditor (OpenAI + Gemini), 10 RFP architectural tenets matrix, chaos disaster recovery test, and turnkey blueprints. Built ahead of engagement.</div>
           </td>
           <td style="text-align: center; font-weight: 700; white-space: nowrap;">Live Now</td>
           <td style="text-align: center; color: #16a34a; font-weight: 700;">Included</td>
           <td style="text-align: right; font-weight: 800; color: #16a34a;">$0.00 (Live)</td>
         </tr>
         <tr>
-          <td class="phase-num">Milestone 1</td>
+          <td class="phase-num">Phase 1</td>
           <td>
-            <div class="phase-name">Advisor Intake Form, Dynamic Field Types &amp; In-Memory Validation</div>
-            <div class="phase-desc">Polished data-entry form with Yes/No toggle pill groups, multi-choice radio cards with point weights, and prospect demographic inputs. Real-time required-field validation and instant one-click prospect reset lifecycle.</div>
+            <div class="phase-name">Engineering &amp; AI-Development Diagnostic Audit &amp; Risk Baseline</div>
+            <div class="phase-desc">Deep-dive assessment of SquidERP's .NET Core, SQL Server, WPF, and Angular codebases. Audit current developer workflows (Claude Code, Codex, Cursor), identify architectural drift hotspots, and deliver the Target AI-Native Operating Model.</div>
           </td>
-          <td style="text-align: center; font-weight: 600;">1 Day</td>
-          <td style="text-align: center; font-weight: 700; color: #0284c7;">25%</td>
-          <td style="text-align: right; font-weight: 700;">$75.00</td>
+          <td style="text-align: center; font-weight: 600;">Weeks 1–2</td>
+          <td style="text-align: center; font-weight: 700; color: #4f46e5;">50 hrs</td>
+          <td style="text-align: right; font-weight: 700;">$2,350.00</td>
         </tr>
         <tr>
-          <td class="phase-num">Milestone 2</td>
+          <td class="phase-num">Phase 2</td>
           <td>
-            <div class="phase-name">Decoupled Scoring Architecture, 5-Pillar Rules &amp; R/Y/G Indicators</div>
-            <div class="phase-desc">Pure calculation engine in <code>src/lib/scoring-engine.ts</code>. Category point aggregation, overall readiness score (0-100), automated Red (&lt;50%), Yellow (50-74%), and Green (&ge;75%) status badges, and dynamic priority actions.</div>
+            <div class="phase-name">Repository Rules, Skills &amp; Bounded Context Engine Implementation</div>
+            <div class="phase-desc">Deploy repository-level <code>.claude/rules/</code> across all key ERP modules. Create domain-specific Bounded Context Packs (Accounting, Inventory, Sync, Reporting), custom MCP schema servers, and Gherkin-based specification intake contracts.</div>
           </td>
-          <td style="text-align: center; font-weight: 600;">1 Day</td>
-          <td style="text-align: center; font-weight: 700; color: #0284c7;">25%</td>
-          <td style="text-align: right; font-weight: 700;">$75.00</td>
+          <td style="text-align: center; font-weight: 600;">Weeks 3–5</td>
+          <td style="text-align: center; font-weight: 700; color: #4f46e5;">75 hrs</td>
+          <td style="text-align: right; font-weight: 700;">$3,525.00</td>
         </tr>
         <tr>
-          <td class="phase-num">Milestone 3</td>
+          <td class="phase-num">Phase 3</td>
           <td>
-            <div class="phase-name">Vector-Accurate 8.5×11 Portrait PDF Engine &amp; Print Consistency Lock</div>
-            <div class="phase-desc">CSS <code>@page {{ size: letter portrait; margin: 8mm 10mm; }}</code> with strict <code>@media print</code> element suppression. Guaranteed single-page print boundary eliminating 2-page spillovers across standard Windows PCs and browsers.</div>
+            <div class="phase-name">TeamCity CI/CD Quality Gates &amp; Roslyn Drift Firewall Deployment</div>
+            <div class="phase-desc">Build custom C# Roslyn analyzers (<code>ERP-ARCH-001</code>) blocking direct GeneralLedger writes. Deploy SQL Server migration linters (<code>SQL-SEC-014</code>) enforcing @TenantId, and automated 3-agent adversarial review pipeline into TeamCity CI.</div>
           </td>
-          <td style="text-align: center; font-weight: 600;">1 Day</td>
-          <td style="text-align: center; font-weight: 700; color: #0284c7;">25%</td>
-          <td style="text-align: right; font-weight: 700;">$75.00</td>
+          <td style="text-align: center; font-weight: 600;">Weeks 6–9</td>
+          <td style="text-align: center; font-weight: 700; color: #4f46e5;">100 hrs</td>
+          <td style="text-align: right; font-weight: 700;">$4,700.00</td>
         </tr>
         <tr>
-          <td class="phase-num">Milestone 4</td>
+          <td class="phase-num">Phase 4</td>
           <td>
-            <div class="phase-name">Standalone Offline HTML Export, Schema Inspector &amp; AI Copilot</div>
-            <div class="phase-desc">One-click bundled offline HTML export with inlined styles for locked-down corporate PCs; live Schema Inspector modal (<code>/api/export-schema</code>) for non-technical rule updates; optional dual-provider AI executive commentary.</div>
+            <div class="phase-name">Legacy Modernization Playbook, Golden Master Tests &amp; Team Enablement</div>
+            <div class="phase-desc">Execute Strangler Fig modernization workflows for legacy stored procedures and WPF sync daemons with automated Golden Master regression suites. Conduct developer enablement workshops and transition to ongoing architectural advisory.</div>
           </td>
-          <td style="text-align: center; font-weight: 600;">0.5 Day</td>
-          <td style="text-align: center; font-weight: 700; color: #0284c7;">17%</td>
-          <td style="text-align: right; font-weight: 700;">$50.00</td>
-        </tr>
-        <tr>
-          <td class="phase-num">Milestone 5</td>
-          <td>
-            <div class="phase-name">Windows PC Cross-Browser Staging QA, Reset Lifecycle &amp; 100% Handover</div>
-            <div class="phase-desc">Cross-browser print testing on Windows 10/11 (Edge, Chrome, Firefox) across 100%, 125%, 150% display scaling; complete source code ownership transfer, step-by-step setup documentation, and 30-day bug-fix warranty.</div>
-          </td>
-          <td style="text-align: center; font-weight: 600;">0.5 Day</td>
-          <td style="text-align: center; font-weight: 700; color: #0284c7;">8%</td>
-          <td style="text-align: right; font-weight: 700;">$25.00</td>
+          <td style="text-align: center; font-weight: 600;">Weeks 10–12</td>
+          <td style="text-align: center; font-weight: 700; color: #4f46e5;">75 hrs</td>
+          <td style="text-align: right; font-weight: 700;">$3,525.00</td>
         </tr>
         <tr class="total-row">
-          <td colspan="2" style="font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em;">Total Turnkey Production Scope (All Requirements Covered)</td>
-          <td style="text-align: center; font-weight: 800;">3–4 Days</td>
-          <td style="text-align: center; font-weight: 800;">100%</td>
-          <td style="text-align: right; font-weight: 800; font-family: ui-monospace, monospace; font-size: 10px;">$300.00</td>
+          <td colspan="2" style="font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em;">Total Turnkey Architectural Rollout Scope (300 Hours @ $47.00/hr)</td>
+          <td style="text-align: center; font-weight: 800;">12 Weeks</td>
+          <td style="text-align: center; font-weight: 800;">300 hrs</td>
+          <td style="text-align: right; font-weight: 800; font-family: ui-monospace, monospace; font-size: 10px;">$14,100.00</td>
         </tr>
       </tbody>
     </table>
@@ -581,40 +572,36 @@ def build_estimate():
   <!-- 3. 2-Column Technical & Financial Breakdown -->
   <div class="grid-2col">
     <div class="card-box">
-      <div class="card-box-title">Milestone Escrow &amp; Release Schedule</div>
+      <div class="card-box-title">Operating Engagement &amp; Sprint Structure</div>
       <div class="milestone-item">
-        <span class="milestone-name">Phase 0: Interactive Architectural Prototype (Live)</span>
-        <span class="milestone-val" style="color: #16a34a;">$0.00 (Delivered)</span>
+        <span class="milestone-name">Phase 0: Interactive Control Plane (Delivered)</span>
+        <span class="milestone-val" style="color: #16a34a;">$0.00 (Live Ahead of Bid)</span>
       </div>
       <div class="milestone-item">
-        <span class="milestone-name">M1: Advisor Intake Form &amp; Validation Engine</span>
-        <span class="milestone-val">$75.00 (Net 1 Day)</span>
+        <span class="milestone-name">Phase 1: Codebase Diagnostic &amp; Drift Audit (50 hrs)</span>
+        <span class="milestone-val">$2,350.00 (Weeks 1–2)</span>
       </div>
       <div class="milestone-item">
-        <span class="milestone-name">M2: Decoupled Scoring Architecture &amp; R/Y/G Rules</span>
-        <span class="milestone-val">$75.00 (Net 2 Days)</span>
+        <span class="milestone-name">Phase 2: Rules, MCP &amp; Context Engine (75 hrs)</span>
+        <span class="milestone-val">$3,525.00 (Weeks 3–5)</span>
       </div>
       <div class="milestone-item">
-        <span class="milestone-name">M3: Vector-Accurate 8.5x11 PDF Print Engine</span>
-        <span class="milestone-val">$75.00 (Net 3 Days)</span>
+        <span class="milestone-name">Phase 3: Roslyn Firewall &amp; TeamCity CI (100 hrs)</span>
+        <span class="milestone-val">$4,700.00 (Weeks 6–9)</span>
       </div>
       <div class="milestone-item">
-        <span class="milestone-name">M4: Standalone HTML Export &amp; Schema Inspector</span>
-        <span class="milestone-val">$50.00 (Net 3.5 Days)</span>
-      </div>
-      <div class="milestone-item">
-        <span class="milestone-name">M5: Windows PC QA &amp; 100% Source Code Transfer</span>
-        <span class="milestone-val">$25.00 (Net 4 Days)</span>
+        <span class="milestone-name">Phase 4: Strangler Modernization &amp; Training (75 hrs)</span>
+        <span class="milestone-val">$3,525.00 (Weeks 10–12)</span>
       </div>
     </div>
 
     <div class="card-box">
-      <div class="card-box-title">Architecture &amp; Print Consistency Guardrails</div>
-      <div class="guardrail-item"><strong>Single-Page 8.5x11 Guarantee:</strong> Vector CSS <code>@page</code> Letter portrait rules lock content to 248mm max height</div>
-      <div class="guardrail-item"><strong>Zero-PII Storage Policy:</strong> Pure client-side in-memory state; zero permanent database or cookie storage</div>
-      <div class="guardrail-item"><strong>Decoupled JSON Configuration:</strong> All questions, weights, and cutoffs isolated in <code>scorecard-config.ts</code></div>
-      <div class="guardrail-item"><strong>Dual Export Options:</strong> Browser vector PDF print (Ctrl+P) + 1-click standalone offline HTML file</div>
-      <div class="guardrail-item"><strong>Multi-Provider AI Fallback:</strong> OpenAI gpt-4o-mini + Gemini 2.0 Flash + deterministic CFP rule engine</div>
+      <div class="card-box-title">Deterministic Architecture Guardrails</div>
+      <div class="guardrail-item"><strong>Roslyn Compiler-Level Defense:</strong> C# analyzers throw compilation errors if ledger transactions bypass scopes</div>
+      <div class="guardrail-item"><strong>SQL Multi-Tenant Partitioning:</strong> Automated AST migration linter verifies mandatory @TenantId indexing</div>
+      <div class="guardrail-item"><strong>3-Tier Review Triad:</strong> Concurrency Hunter + Boundary Auditor + Ledger Guardian subagent consensus</div>
+      <div class="guardrail-item"><strong>Human-in-the-Loop Safeguards:</strong> High-blast-radius financial mutations strictly escalate to Staff Architects</div>
+      <div class="guardrail-item"><strong>Strangler Fig Characterization:</strong> Automated Golden Master suites eliminate legacy refactor regressions</div>
     </div>
   </div>
 
@@ -622,20 +609,20 @@ def build_estimate():
   <div class="terms-box">
     <div class="terms-grid">
       <div class="term-col">
-        <div class="term-title">Fixed-Price Guarantee</div>
-        <div class="term-body">100% milestone-based fixed investment ($300.00). Zero hidden fees, zero vendor markups, zero scope creep.</div>
+        <div class="term-title">Transparent Hourly Billing</div>
+        <div class="term-body">$47.00/hr strictly logged via Upwork TeamCity/Git tracked hours (~25–30 hrs/wk). Zero billing surprises or markups.</div>
       </div>
       <div class="term-col">
-        <div class="term-title">30-Day Bug Warranty</div>
-        <div class="term-body">Full post-deployment coverage for browser layout adjustments, scoring tweaks, and print QA at $0 extra.</div>
+        <div class="term-title">Deterministic Gates</div>
+        <div class="term-body">Architecture rules are enforced at compiler and CI build levels, ensuring rogue AI agents cannot commit bad code.</div>
       </div>
       <div class="term-col">
-        <div class="term-title">100% Code Ownership</div>
-        <div class="term-body">All source code, Git history, and assets transferred directly to your team with no recurring licensing fees.</div>
+        <div class="term-title">100% IP &amp; Code Ownership</div>
+        <div class="term-body">All Roslyn analyzers, Kotlin CI pipelines, Claude rules, and documentation belong 100% to SquidERP.</div>
       </div>
       <div class="term-col">
-        <div class="term-title">Handover &amp; Setup Docs</div>
-        <div class="term-body">Step-by-step documentation for running locally (<code>npm run dev</code>) or deploying in 1-click to Vercel.</div>
+        <div class="term-title">Contract-to-Hire Flexibility</div>
+        <div class="term-body">Seamless transition from initial architecture rollout into ongoing long-term advisory or Principal Architect role.</div>
       </div>
     </div>
   </div>
@@ -648,21 +635,21 @@ def build_estimate():
     </div>
     <div class="auth-grid">
       <div class="auth-party">
-        <div class="auth-party-title">Authorized Provider: BarakahSoft LLC (Wyoming, USA)</div>
-        <div>Signatory: <strong>Shakil Ahmed</strong> • Principal Systems Architect &amp; Founder</div>
+        <div class="auth-party-title">Authorized Architect: BarakahSoft LLC (Wyoming, USA)</div>
+        <div>Signatory: <strong>Shakil Ahmed</strong> • Principal AI-Native Systems Architect &amp; Founder</div>
         <div class="auth-sign-line">
           <div class="auth-sign-field">Shakil Ahmed</div>
           <div class="auth-date-field">15 Sep 2026</div>
         </div>
         <div style="display: flex; justify-content: space-between;">
-          <span class="auth-label">Authorized Provider Signature</span>
+          <span class="auth-label">Authorized Architect Signature</span>
           <span class="auth-label" style="width: 90px; text-align: center;">Date</span>
         </div>
       </div>
 
       <div class="auth-party">
-        <div class="auth-party-title">Authorized Client: Jim Martin (Christiansburg, VA, USA)</div>
-        <div>Signatory: <strong>Jim Martin</strong> • Authorized Client Representative</div>
+        <div class="auth-party-title">Authorized Client: SquidERP Inc. (Brooklyn, NY, USA)</div>
+        <div>Signatory: <strong>Mendel</strong> • Authorized Client Representative</div>
         <div class="auth-sign-line">
           <div class="auth-sign-field" style="color: #64748b; font-family: inherit; font-size: 8px; font-style: italic;">[ Accepted via Upwork Contract Offer / Sign-off ]</div>
           <div class="auth-date-field">___ / ___ / 2026</div>
@@ -680,14 +667,14 @@ def build_estimate():
     <div class="footer-founder">
       <img src="data:image/jpeg;base64,{headshot_b64}" alt="Shakil Ahmed" class="founder-avatar" />
       <div class="founder-info">
-        <div class="founder-name"><strong>Shakil Ahmed</strong> • Founder &amp; Lead Systems Architect (12+ Yrs Exp)</div>
-        <div class="founder-company"><strong>BarakahSoft LLC</strong> • Enterprise Wealth &amp; AI Systems Partner</div>
-        <div class="founder-sub">Former Lead Engineer at Legiit ($1M ARR Command Center) • Verified Upwork Partner</div>
+        <div class="founder-name"><strong>Shakil Ahmed</strong> • Principal Systems Architect &amp; Founder (12+ Yrs Exp)</div>
+        <div class="founder-company"><strong>BarakahSoft LLC</strong> • Enterprise Systems Engineering &amp; AI Governance</div>
+        <div class="founder-sub">Former Lead Engineer at Legiit ($1M ARR Command Center) • Upwork Verified Partner</div>
       </div>
     </div>
     <div class="footer-brand">
       <img src="data:image/png;base64,{logo_b64}" alt="BarakahSoft" class="business-logo" />
-      <a href="https://retirement-scorecard-app.vercel.app" target="_blank" class="demo-badge">retirement-scorecard-app.vercel.app</a>
+      <a href="https://squiderp-agentic-governance.vercel.app" target="_blank" class="demo-badge">squiderp-agentic-governance.vercel.app</a>
     </div>
   </div>
 </div>
