@@ -100,9 +100,6 @@ export default function HomePage() {
         {/* Authoritative Bento KPI Matrix */}
         <BentoKpis />
 
-        {/* Interactive 6-Stage AI-Native State Machine Canvas */}
-        <WorkflowCanvas />
-
         {/* View Switcher Bar with Brevity Law Tabs & Scroll Anchor */}
         <div id="interactive-cockpit-view" className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pt-3 scroll-mt-20">
           <div className="flex items-center gap-1.5 p-1 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-2xs overflow-x-auto scrollbar-none">
@@ -115,7 +112,7 @@ export default function HomePage() {
               }`}
             >
               <ShieldAlert className="h-3.5 w-3.5" />
-              Drift Simulator
+              Drift Firewall
             </button>
 
             <button
@@ -205,7 +202,12 @@ export default function HomePage() {
           {activeTab === "auditor" && <LiveCodeAuditor />}
           {activeTab === "workflows" && <AgenticWorkflowsView />}
           {activeTab === "tenets" && <ArchitecturalTenetsMatrix />}
-          {activeTab === "roadmap" && <DiagnosticRoadmapView />}
+          {activeTab === "roadmap" && (
+            <div className="space-y-6">
+              <WorkflowCanvas />
+              <DiagnosticRoadmapView />
+            </div>
+          )}
         </section>
 
         {/* Real-time TeamCity CI/CD & Agent Activity Stream Drawer */}

@@ -46,47 +46,42 @@ export function Header({
     const isCurrent = activeTab === tabKey;
     return `flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold rounded-lg whitespace-nowrap shrink-0 transition-all ${
       isCurrent
-        ? "bg-indigo-600 text-white shadow-sm dark:bg-indigo-500 dark:text-white"
-        : "text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white hover:bg-slate-200/60 dark:hover:bg-slate-700/60"
+        ? "bg-indigo-600 text-white shadow-xs dark:bg-indigo-500 dark:text-white"
+        : "text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white hover:bg-white/80 dark:hover:bg-slate-700/60"
     }`;
   };
 
   return (
-    <header className="w-full border-b border-slate-200 bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/80 dark:border-slate-800 dark:bg-slate-900/95 px-0 py-2.5 sticky top-0 z-40">
+    <header className="w-full border-b border-slate-200/90 bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/80 dark:border-slate-800 dark:bg-slate-900/95 px-0 py-2.5 sticky top-0 z-40">
       <div className="mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between gap-4">
-          {/* Logo & Enterprise Context (Zero Truncation) */}
-          <div className="flex items-center gap-3 shrink-0">
-            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-slate-900 text-white shadow-md dark:bg-indigo-600">
-              <ShieldCheck className="h-5 w-5 text-indigo-400 dark:text-white" />
+        <div className="flex items-center justify-between gap-3">
+          {/* Logo & Brand Context (Clean, compact, non-wrapping) */}
+          <div className="flex items-center gap-2.5 shrink-0">
+            <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-indigo-600 text-white shadow-xs">
+              <ShieldCheck className="h-5 w-5" />
             </div>
-            <div className="flex flex-col justify-center">
-              <div className="flex items-center gap-2">
-                <span className="font-bold text-base tracking-tight text-slate-900 dark:text-white whitespace-nowrap">
-                  AgenticGate
-                </span>
-                <Badge variant="outline" className="hidden sm:inline-flex text-xs font-mono border-slate-300 dark:border-slate-700">
-                  SquidERP Core
-                </Badge>
-                <span className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full text-xs font-medium bg-emerald-50 text-emerald-700 border border-emerald-200 dark:bg-emerald-950/40 dark:text-emerald-400 dark:border-emerald-800 whitespace-nowrap shrink-0">
-                  <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
-                  42 Rules Active
-                </span>
-              </div>
-              <p className="text-xs text-slate-500 dark:text-slate-400 hidden sm:block whitespace-nowrap font-medium">
-                Enterprise AI-Native Software Engineering & Drift Firewall Control Plane
-              </p>
+            <div className="flex items-center gap-2">
+              <span className="font-bold text-sm tracking-tight text-slate-900 dark:text-white whitespace-nowrap">
+                AgenticGate
+              </span>
+              <Badge variant="outline" className="hidden sm:inline-flex text-xs font-mono border-slate-300 dark:border-slate-700">
+                SquidERP Core
+              </Badge>
+              <span className="hidden md:inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full text-xs font-mono font-medium bg-emerald-50 text-emerald-700 border border-emerald-200 dark:bg-emerald-950/40 dark:text-emerald-400 dark:border-emerald-800 whitespace-nowrap">
+                <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                42 Rules Active
+              </span>
             </div>
           </div>
 
-          {/* Center Navigation Tabs (Brevity Law: ≤ 18 chars, whitespace-nowrap shrink-0) */}
-          <div className="hidden lg:flex items-center gap-1 rounded-xl bg-slate-100 p-1 dark:bg-slate-800 shrink-0">
+          {/* Primary Navigation Tabs (Balanced, crisp, fits standard viewports) */}
+          <nav className="hidden lg:flex items-center gap-1 rounded-xl bg-slate-100/90 p-1 dark:bg-slate-800/80 shrink-0 border border-slate-200/60 dark:border-slate-700/60">
             <button
               onClick={() => onSelectTab("simulator")}
               className={getNavClass("simulator")}
             >
               <Cpu className="h-3.5 w-3.5" />
-              Drift Simulator
+              Drift Firewall
             </button>
             <button
               onClick={() => onSelectTab("auditor")}
@@ -103,23 +98,23 @@ export function Header({
               Workflows & APIs
             </button>
             <button
-              onClick={() => onSelectTab("tenets")}
-              className={getNavClass("tenets")}
-            >
-              <Layers className="h-3.5 w-3.5" />
-              10 Tenets
-            </button>
-            <button
               onClick={() => onSelectTab("roadmap")}
               className={getNavClass("roadmap")}
             >
               <Terminal className="h-3.5 w-3.5" />
               Operating Model
             </button>
-          </div>
+            <button
+              onClick={() => onSelectTab("tenets")}
+              className={getNavClass("tenets")}
+            >
+              <Layers className="h-3.5 w-3.5" />
+              10 Tenets
+            </button>
+          </nav>
 
-          {/* Action Cluster (Brevity Law: ≤ 14 chars, whitespace-nowrap shrink-0) */}
-          <div className="flex items-center gap-2 shrink-0">
+          {/* Action Cluster (Balanced, professional) */}
+          <div className="flex items-center gap-1.5 sm:gap-2 shrink-0">
             <button
               onClick={onOpenCommand}
               className="hidden sm:inline-flex items-center gap-1.5 px-2.5 py-1.5 text-xs font-medium text-slate-600 bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:text-slate-300 dark:hover:bg-slate-700 rounded-lg border border-slate-200 dark:border-slate-700 whitespace-nowrap shrink-0 transition-colors"
@@ -135,7 +130,7 @@ export function Header({
               variant="outline"
               size="sm"
               onClick={onOpenRoi}
-              className="hidden xl:inline-flex items-center gap-1.5 text-xs font-semibold whitespace-nowrap shrink-0"
+              className="hidden xl:inline-flex items-center gap-1.5 text-xs font-semibold whitespace-nowrap shrink-0 h-8"
             >
               <Calculator className="h-3.5 w-3.5 text-indigo-600 dark:text-indigo-400" />
               ROI Calc
@@ -145,7 +140,7 @@ export function Header({
               variant="outline"
               size="sm"
               onClick={onOpenChaos}
-              className="inline-flex items-center gap-1.5 text-xs font-semibold border-amber-300 text-amber-800 bg-amber-50 hover:bg-amber-100 dark:border-amber-700 dark:text-amber-300 dark:bg-amber-950/40 whitespace-nowrap shrink-0"
+              className="hidden sm:inline-flex items-center gap-1.5 text-xs font-semibold border-amber-300 text-amber-800 bg-amber-50 hover:bg-amber-100 dark:border-amber-700 dark:text-amber-300 dark:bg-amber-950/40 whitespace-nowrap shrink-0 h-8"
             >
               <AlertTriangle className="h-3.5 w-3.5 text-amber-600 dark:text-amber-400" />
               Chaos Test
@@ -155,7 +150,7 @@ export function Header({
               variant="brand"
               size="sm"
               onClick={onOpenBlueprints}
-              className="inline-flex items-center gap-1.5 text-xs font-semibold whitespace-nowrap shrink-0"
+              className="inline-flex items-center gap-1.5 text-xs font-semibold whitespace-nowrap shrink-0 h-8"
             >
               <Download className="h-3.5 w-3.5" />
               Blueprints
