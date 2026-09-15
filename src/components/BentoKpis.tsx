@@ -138,7 +138,7 @@ export function BentoKpis() {
 
             {/* Coolify Comparative Latency Bar Chart (SVG) */}
             <div className="mt-3 pt-2 border-t border-slate-100 dark:border-slate-800/80">
-              <div className="h-10 w-full flex flex-col justify-center gap-1.5 text-[11px] font-mono">
+              <div className="h-10 w-full flex flex-col justify-center gap-1.5 text-xs font-mono">
                 {/* Bar 1: Manual PR */}
                 <div className="flex items-center gap-2">
                   <span className="w-9 text-slate-500 dark:text-slate-400 shrink-0">Human</span>
@@ -208,7 +208,7 @@ export function BentoKpis() {
                   <div key={i} className="flex flex-col items-center gap-1" title={`Tenant Node 0${i + 1}: STRICT ISOLATION`}>
                     <div className="h-2 w-2 rounded-full bg-blue-500 dark:bg-blue-400 shadow-xs shadow-blue-500/50"></div>
                     <div className="h-3 w-0.5 bg-slate-200 dark:bg-slate-700 rounded-full"></div>
-                    <span className="text-[9px] font-mono text-slate-400">T{i + 1}</span>
+                    <span className="text-xs font-mono text-slate-400">T{i + 1}</span>
                   </div>
                 ))}
               </div>
@@ -260,7 +260,7 @@ export function BentoKpis() {
             {/* Coolify Stepped Stage Duration Progress (SVG/CSS) */}
             <div className="mt-3 pt-2 border-t border-slate-100 dark:border-slate-800/80">
               <div className="space-y-1">
-                <div className="flex justify-between text-[10px] font-mono text-slate-400">
+                <div className="flex justify-between text-xs font-mono text-slate-400">
                   <span>AST: 6s</span>
                   <span>Roslyn: 12s</span>
                   <span>3-Agent: 18s</span>
@@ -320,7 +320,7 @@ export function BentoKpis() {
 
             {/* Coolify Context Compression Gauge (SVG) */}
             <div className="mt-3 pt-2 border-t border-slate-100 dark:border-slate-800/80">
-              <div className="h-10 w-full flex flex-col justify-center gap-1.5 text-[11px] font-mono">
+              <div className="h-10 w-full flex flex-col justify-center gap-1.5 text-xs font-mono">
                 <div className="flex items-center gap-2">
                   <span className="w-8 text-slate-500 shrink-0">Dump</span>
                   <div className="flex-1 h-2 bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
@@ -384,7 +384,7 @@ export function BentoKpis() {
             {/* Coolify Risk Donut / Segment Proportion Bar (SVG) */}
             <div className="mt-3 pt-2 border-t border-slate-100 dark:border-slate-800/80">
               <div className="space-y-1">
-                <div className="flex justify-between text-[10px] font-mono text-slate-400">
+                <div className="flex justify-between text-xs font-mono text-slate-400">
                   <span className="text-emerald-600 dark:text-emerald-400 font-semibold">92% Autonomous</span>
                   <span className="text-amber-600 dark:text-amber-400 font-semibold">8% Staff Sign-off</span>
                 </div>

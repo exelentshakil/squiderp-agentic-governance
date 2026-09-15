@@ -39,6 +39,12 @@ export function DiagnosticRoadmapView() {
   const [simRiskTier, setSimRiskTier] = useState<"low" | "high">("high");
   const [isSimulating, setIsSimulating] = useState<boolean>(false);
   const [simStep, setSimStep] = useState<number>(0);
+  const [simOutcome, setSimOutcome] = useState<{
+    tier: "low" | "high";
+    title: string;
+    detail: string;
+    latency: string;
+  } | null>(null);
 
   const loopStages = [
     {
@@ -113,17 +119,32 @@ export function DiagnosticRoadmapView() {
     if (isSimulating) return;
     setIsSimulating(true);
     setSimStep(1);
+    setSelectedLoopStage(0);
+    setSimOutcome(null);
 
     let current = 1;
     const timer = setInterval(() => {
       current += 1;
       if (current <= 6) {
         setSimStep(current);
+        setSelectedLoopStage(current - 1);
       } else {
         clearInterval(timer);
         setIsSimulating(false);
+        setSimOutcome({
+          tier: simRiskTier,
+          title:
+            simRiskTier === "high"
+              ? "Drift Blocked: Roslyn ERP-ARCH-001 Intercepted Direct Ledger Write"
+              : "Zero Drift: Low-Risk PR Auto-Merged in 38.4s",
+          detail:
+            simRiskTier === "high"
+              ? "Illegal direct SQL mutation on GeneralLedger blocked by Roslyn static analyzer in 12s. Human Blast Shield active: PR escalated to Staff Architect for cryptographic JWT sign-off."
+              : "All 42 Roslyn rules + 3-Agent Triad consensus verified (Boundaries 99.4%, Concurrency 98%, Ledger 100%). Merged to staging branch with 0 human interruptions.",
+          latency: simRiskTier === "high" ? "14.2s to Escalation" : "38.4s Total Cycle",
+        });
       }
-    }, 700);
+    }, 550);
   };
 
   const currentPhase = DIAGNOSTIC_ROADMAP[selectedPhaseIdx] || DIAGNOSTIC_ROADMAP[0];
@@ -234,17 +255,17 @@ export function DiagnosticRoadmapView() {
                       }`} />
 
                       <div className="flex items-center justify-between gap-1 mb-1">
-                        <span className="text-[10px] font-mono font-bold text-slate-500 dark:text-slate-400 uppercase">
+                        <span className="text-xs font-mono font-bold text-slate-500 dark:text-slate-400 uppercase">
                           0{stage.id}
                         </span>
-                        <span className="text-[10px] font-mono px-1.5 py-0.2 rounded bg-slate-200/70 dark:bg-slate-800 text-slate-700 dark:text-slate-300">
+                        <span className="text-xs font-mono px-1.5 py-0.2 rounded bg-slate-200/70 dark:bg-slate-800 text-slate-700 dark:text-slate-300">
                           {stage.badge}
                         </span>
                       </div>
                       <h4 className="text-xs font-bold text-slate-900 dark:text-white truncate">
                         {stage.title.split(": ")[1]}
                       </h4>
-                      <p className="text-[11px] text-slate-500 dark:text-slate-400 mt-0.5 truncate font-mono">
+                      <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5 truncate font-mono">
                         {stage.actor}
                       </p>
                     </button>
@@ -279,7 +300,7 @@ export function DiagnosticRoadmapView() {
               {/* 3-Column Breakdown */}
               <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
                 <div className="p-3 rounded-lg bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800">
-                  <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 block mb-1">
+                  <span className="text-xs font-mono font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 block mb-1">
                     Enforced Tools & Tech:
                   </span>
                   <p className="text-xs font-semibold text-slate-800 dark:text-slate-200 font-mono">
@@ -288,7 +309,7 @@ export function DiagnosticRoadmapView() {
                 </div>
 
                 <div className="p-3 rounded-lg bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800">
-                  <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-indigo-600 dark:text-indigo-400 block mb-1">
+                  <span className="text-xs font-mono font-bold uppercase tracking-wider text-indigo-600 dark:text-indigo-400 block mb-1">
                     Deterministic vs AI Split:
                   </span>
                   <p className="text-xs font-semibold text-indigo-700 dark:text-indigo-300">
@@ -297,7 +318,7 @@ export function DiagnosticRoadmapView() {
                 </div>
 
                 <div className="p-3 rounded-lg bg-emerald-50/50 dark:bg-emerald-950/20 border border-emerald-200/60 dark:border-emerald-900/40">
-                  <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-emerald-700 dark:text-emerald-400 block mb-1">
+                  <span className="text-xs font-mono font-bold uppercase tracking-wider text-emerald-700 dark:text-emerald-400 block mb-1">
                     Drift Failure Stopped:
                   </span>
                   <p className="text-xs font-medium text-emerald-800 dark:text-emerald-300">
@@ -371,6 +392,38 @@ export function DiagnosticRoadmapView() {
                 </Button>
               </div>
             </div>
+
+            {/* Live Simulation Outcome Card */}
+            {simOutcome && (
+              <div className={`mt-3 p-3.5 rounded-xl border flex flex-col sm:flex-row sm:items-center justify-between gap-3 animate-in fade-in duration-200 ${
+                simOutcome.tier === "high"
+                  ? "bg-amber-50/80 border-amber-300 dark:bg-amber-950/30 dark:border-amber-800 text-amber-900 dark:text-amber-200"
+                  : "bg-emerald-50/80 border-emerald-300 dark:bg-emerald-950/30 dark:border-emerald-800 text-emerald-900 dark:text-emerald-200"
+              }`}>
+                <div className="flex items-start gap-2.5">
+                  <div className={`h-5 w-5 rounded-full flex items-center justify-center shrink-0 mt-0.5 ${
+                    simOutcome.tier === "high"
+                      ? "bg-amber-600 text-white"
+                      : "bg-emerald-600 text-white"
+                  }`}>
+                    {simOutcome.tier === "high" ? "!" : "✓"}
+                  </div>
+                  <div>
+                    <div className="text-xs font-bold font-mono">
+                      {simOutcome.title}
+                    </div>
+                    <p className="text-xs text-slate-600 dark:text-slate-300 mt-0.5 leading-relaxed">
+                      {simOutcome.detail}
+                    </p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-2 shrink-0 self-end sm:self-center">
+                  <span className="text-xs font-mono font-bold px-2 py-0.5 rounded bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-2xs">
+                    ⏱ {simOutcome.latency}
+                  </span>
+                </div>
+              </div>
+            )}
           </div>
         )}
 
@@ -394,7 +447,7 @@ export function DiagnosticRoadmapView() {
                     }`}
                   >
                     <div className="flex items-center justify-between mb-1.5">
-                      <span className="px-2 py-0.5 rounded text-[11px] font-mono font-bold bg-slate-900 text-white dark:bg-slate-100 dark:text-slate-900">
+                      <span className="px-2 py-0.5 rounded text-xs font-mono font-bold bg-slate-900 text-white dark:bg-slate-100 dark:text-slate-900">
                         {p.phase}
                       </span>
                       <span className="text-xs font-mono text-indigo-600 dark:text-indigo-400 font-semibold">
@@ -404,7 +457,7 @@ export function DiagnosticRoadmapView() {
                     <h4 className="text-xs font-bold text-slate-900 dark:text-white line-clamp-1">
                       {p.name}
                     </h4>
-                    <p className="text-[11px] text-slate-500 dark:text-slate-400 mt-1 truncate font-mono">
+                    <p className="text-xs text-slate-500 dark:text-slate-400 mt-1 truncate font-mono">
                       {p.track}
                     </p>
                   </button>
@@ -439,7 +492,7 @@ export function DiagnosticRoadmapView() {
 
               {/* Focus Statement */}
               <div className="p-3.5 rounded-lg bg-slate-50 dark:bg-slate-900 border border-slate-200/70 dark:border-slate-800">
-                <span className="text-[11px] font-mono font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider block mb-1">
+                <span className="text-xs font-mono font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider block mb-1">
                   Strategic Engineering Objective:
                 </span>
                 <p className="text-xs text-slate-700 dark:text-slate-300 leading-relaxed">
@@ -493,7 +546,7 @@ export function DiagnosticRoadmapView() {
               
               {/* Metric 1: PR Cycle Time */}
               <div className="p-3.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-2xs">
-                <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 block mb-1">
+                <span className="text-xs font-mono font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 block mb-1">
                   PR Cycle Time
                 </span>
                 <div className="flex items-baseline gap-2">
@@ -502,7 +555,7 @@ export function DiagnosticRoadmapView() {
                   </span>
                   <span className="text-xs font-mono text-slate-400 line-through">4.2 Days</span>
                 </div>
-                <div className="mt-2 text-[11px] text-emerald-600 dark:text-emerald-400 font-medium flex items-center gap-1">
+                <div className="mt-2 text-xs text-emerald-600 dark:text-emerald-400 font-medium flex items-center gap-1">
                   <TrendingDown className="h-3 w-3" />
                   96% Faster Merges
                 </div>
@@ -510,7 +563,7 @@ export function DiagnosticRoadmapView() {
 
               {/* Metric 2: Architectural Drift */}
               <div className="p-3.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-2xs">
-                <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 block mb-1">
+                <span className="text-xs font-mono font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 block mb-1">
                   Prod Drift Incidents
                 </span>
                 <div className="flex items-baseline gap-2">
@@ -519,7 +572,7 @@ export function DiagnosticRoadmapView() {
                   </span>
                   <span className="text-xs font-mono text-slate-400 line-through">14 / Qtr</span>
                 </div>
-                <div className="mt-2 text-[11px] text-emerald-600 dark:text-emerald-400 font-medium flex items-center gap-1">
+                <div className="mt-2 text-xs text-emerald-600 dark:text-emerald-400 font-medium flex items-center gap-1">
                   <ShieldCheck className="h-3 w-3" />
                   100% Intercepted
                 </div>
@@ -527,7 +580,7 @@ export function DiagnosticRoadmapView() {
 
               {/* Metric 3: Token Burn / Prompt */}
               <div className="p-3.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-2xs">
-                <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 block mb-1">
+                <span className="text-xs font-mono font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 block mb-1">
                   Context Window Burn
                 </span>
                 <div className="flex items-baseline gap-2">
@@ -536,7 +589,7 @@ export function DiagnosticRoadmapView() {
                   </span>
                   <span className="text-xs font-mono text-slate-400 line-through">128k</span>
                 </div>
-                <div className="mt-2 text-[11px] text-indigo-600 dark:text-indigo-400 font-medium flex items-center gap-1">
+                <div className="mt-2 text-xs text-indigo-600 dark:text-indigo-400 font-medium flex items-center gap-1">
                   <TrendingDown className="h-3 w-3" />
                   84% Token Cut
                 </div>
@@ -544,7 +597,7 @@ export function DiagnosticRoadmapView() {
 
               {/* Metric 4: Senior Review Hours */}
               <div className="p-3.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-2xs">
-                <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 block mb-1">
+                <span className="text-xs font-mono font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 block mb-1">
                   Staff PR Review Time
                 </span>
                 <div className="flex items-baseline gap-2">
@@ -553,7 +606,7 @@ export function DiagnosticRoadmapView() {
                   </span>
                   <span className="text-xs font-mono text-slate-400 line-through">26 Hrs</span>
                 </div>
-                <div className="mt-2 text-[11px] text-indigo-600 dark:text-indigo-400 font-medium flex items-center gap-1">
+                <div className="mt-2 text-xs text-indigo-600 dark:text-indigo-400 font-medium flex items-center gap-1">
                   <TrendingDown className="h-3 w-3" />
                   22.8 Hrs Saved/Wk
                 </div>
@@ -561,7 +614,7 @@ export function DiagnosticRoadmapView() {
 
               {/* Metric 5: Audit Compliance */}
               <div className="p-3.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-2xs">
-                <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 block mb-1">
+                <span className="text-xs font-mono font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 block mb-1">
                   Audit Trail Logging
                 </span>
                 <div className="flex items-baseline gap-2">
@@ -570,7 +623,7 @@ export function DiagnosticRoadmapView() {
                   </span>
                   <span className="text-xs font-mono text-slate-400 line-through">Manual</span>
                 </div>
-                <div className="mt-2 text-[11px] text-emerald-600 dark:text-emerald-400 font-medium flex items-center gap-1">
+                <div className="mt-2 text-xs text-emerald-600 dark:text-emerald-400 font-medium flex items-center gap-1">
                   <CheckCircle2 className="h-3 w-3" />
                   Tamper-Evident
                 </div>
