@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { CheckCircle2, ArrowRight, ShieldCheck, Zap, Cpu, Download, Workflow } from "lucide-react";
+import { CheckCircle2, ArrowRight, ShieldCheck, Zap, Cpu, Download, Workflow, Terminal } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 
 interface ReviewerTourProps {
@@ -67,28 +67,28 @@ export function ReviewerTour({
     },
     {
       num: 4,
-      tag: "10 RFP Answers",
-      title: "Operating Tenets Matrix",
-      desc: "Review comprehensive architectural blueprints answering all 10 brief requirements for scaling AI across SquidERP.",
+      tag: "Operating Model",
+      title: "Enterprise Operating Model",
+      desc: "Inspect the 6-stage daily developer loop, 4-phase enterprise rollout, and velocity benchmarks for 35+ engineers.",
       action: () => {
-        onSelectTab("tenets");
+        onSelectTab("roadmap");
         if (!completedSteps.includes(4)) toggleStep(4);
       },
-      btnText: "Inspect Tenets",
-      icon: Cpu,
-      isActive: activeTab === "tenets",
+      btnText: "Operating Model",
+      icon: Terminal,
+      isActive: activeTab === "roadmap",
     },
   ];
 
   const progressPercent = Math.round((completedSteps.length / steps.length) * 100);
 
   return (
-    <section className="w-full py-4 border-b border-slate-200 bg-gradient-to-b from-indigo-50/50 via-white to-white dark:from-indigo-950/20 dark:via-slate-900 dark:to-slate-900 dark:border-slate-800">
+    <section className="w-full py-3 border-b border-slate-200/80 bg-gradient-to-b from-indigo-50/40 via-white to-white dark:from-indigo-950/20 dark:via-slate-900 dark:to-slate-900 dark:border-slate-800">
       <div className="mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-8">
         {/* Top Header & Progress */}
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-3">
           <div className="flex items-center gap-2">
-            <span className="flex h-6 w-6 items-center justify-center rounded-full bg-indigo-600 text-white text-xs font-bold font-mono">
+            <span className="flex h-6 w-6 items-center justify-center rounded-full bg-indigo-600 text-white text-xs font-bold font-mono shadow-2xs">
               30s
             </span>
             <h2 className="text-sm font-bold text-slate-900 dark:text-white uppercase tracking-wider">

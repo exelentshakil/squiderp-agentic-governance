@@ -47,12 +47,30 @@ export default function HomePage() {
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, []);
 
+  const handleSelectTab = (tabId: string, shouldScroll = true) => {
+    setActiveTab(tabId);
+    if (shouldScroll) {
+      setTimeout(() => {
+        const el = document.getElementById("interactive-cockpit-view");
+        if (el) {
+          const headerOffset = 70;
+          const elementPosition = el.getBoundingClientRect().top;
+          const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: "smooth"
+          });
+        }
+      }, 40);
+    }
+  };
+
   const handleCommandSelect = (actionId: string) => {
-    if (actionId === "tab-scenarios") setActiveTab("simulator");
-    else if (actionId === "tab-auditor") setActiveTab("auditor");
-    else if (actionId === "tab-workflows") setActiveTab("workflows");
-    else if (actionId === "tab-tenets") setActiveTab("tenets");
-    else if (actionId === "tab-roadmap") setActiveTab("roadmap");
+    if (actionId === "tab-scenarios") handleSelectTab("simulator", true);
+    else if (actionId === "tab-auditor") handleSelectTab("auditor", true);
+    else if (actionId === "tab-workflows") handleSelectTab("workflows", true);
+    else if (actionId === "tab-tenets") handleSelectTab("tenets", true);
+    else if (actionId === "tab-roadmap") handleSelectTab("roadmap", true);
     else if (actionId === "modal-blueprints") setBlueprintsOpen(true);
     else if (actionId === "modal-roi") setRoiOpen(true);
     else if (actionId === "modal-chaos") setChaosOpen(true);
@@ -63,7 +81,7 @@ export default function HomePage() {
       {/* Sticky Header with Cockpit Controls */}
       <Header
         activeTab={activeTab}
-        onSelectTab={setActiveTab}
+        onSelectTab={(tab) => handleSelectTab(tab, true)}
         onOpenBlueprints={() => setBlueprintsOpen(true)}
         onOpenRoi={() => setRoiOpen(true)}
         onOpenChaos={() => setChaosOpen(true)}
@@ -75,7 +93,7 @@ export default function HomePage() {
         {/* Pinned 30-Second Guided Tour */}
         <ReviewerTour
           activeTab={activeTab} 
-          onSelectTab={setActiveTab}
+          onSelectTab={(tab) => handleSelectTab(tab, true)}
           onOpenBlueprints={() => setBlueprintsOpen(true)}
         />
 
@@ -85,11 +103,11 @@ export default function HomePage() {
         {/* Interactive 6-Stage AI-Native State Machine Canvas */}
         <WorkflowCanvas />
 
-        {/* View Switcher Bar with Brevity Law Tabs */}
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pt-2">
+        {/* View Switcher Bar with Brevity Law Tabs & Scroll Anchor */}
+        <div id="interactive-cockpit-view" className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pt-3 scroll-mt-20">
           <div className="flex items-center gap-1.5 p-1 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-2xs overflow-x-auto scrollbar-none">
             <button
-              onClick={() => setActiveTab("simulator")}
+              onClick={() => handleSelectTab("simulator", false)}
               className={`flex items-center gap-1.5 px-3.5 py-2 text-xs font-semibold rounded-lg whitespace-nowrap shrink-0 transition-all ${
                 activeTab === "simulator"
                   ? "bg-indigo-600 text-white shadow-sm"
@@ -101,7 +119,7 @@ export default function HomePage() {
             </button>
 
             <button
-              onClick={() => setActiveTab("auditor")}
+              onClick={() => handleSelectTab("auditor", false)}
               className={`flex items-center gap-1.5 px-3.5 py-2 text-xs font-semibold rounded-lg whitespace-nowrap shrink-0 transition-all ${
                 activeTab === "auditor"
                   ? "bg-indigo-600 text-white shadow-sm"
@@ -113,7 +131,7 @@ export default function HomePage() {
             </button>
 
             <button
-              onClick={() => setActiveTab("workflows")}
+              onClick={() => handleSelectTab("workflows", false)}
               className={`flex items-center gap-1.5 px-3.5 py-2 text-xs font-semibold rounded-lg whitespace-nowrap shrink-0 transition-all ${
                 activeTab === "workflows"
                   ? "bg-indigo-600 text-white shadow-sm"
@@ -125,7 +143,7 @@ export default function HomePage() {
             </button>
 
             <button
-              onClick={() => setActiveTab("tenets")}
+              onClick={() => handleSelectTab("tenets", false)}
               className={`flex items-center gap-1.5 px-3.5 py-2 text-xs font-semibold rounded-lg whitespace-nowrap shrink-0 transition-all ${
                 activeTab === "tenets"
                   ? "bg-indigo-600 text-white shadow-sm"
@@ -137,7 +155,7 @@ export default function HomePage() {
             </button>
 
             <button
-              onClick={() => setActiveTab("roadmap")}
+              onClick={() => handleSelectTab("roadmap", false)}
               className={`flex items-center gap-1.5 px-3.5 py-2 text-xs font-semibold rounded-lg whitespace-nowrap shrink-0 transition-all ${
                 activeTab === "roadmap"
                   ? "bg-indigo-600 text-white shadow-sm"
@@ -181,7 +199,7 @@ export default function HomePage() {
           </div>
         </div>
 
-        {/* Dynamic Main Cockpit View */}
+        {/* Dynamic Main Cockpit View with Smooth Transition */}
         <section className="transition-opacity duration-200">
           {activeTab === "simulator" && <DriftScenarioSimulator />}
           {activeTab === "auditor" && <LiveCodeAuditor />}
